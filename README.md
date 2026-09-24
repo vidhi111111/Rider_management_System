@@ -6,11 +6,11 @@ I started with the Angular setup and used Node.js 16 for the project. Since I ha
 
 The registration form includes:
 
-Full Name
-Email
-Mobile Number
-Password
-Confirm Password
+- Full Name
+- Email
+- Mobile Number
+- Password
+- Confirm Password
 
 I also worked on the basic form validations. I added checks for empty fields, email format, mobile number, and password and confirm password matching. While doing this, I also got a better understanding of how form controls and validation work in Angular.
 
@@ -21,14 +21,14 @@ The API receives the registration details in JSON format and performs basic vali
 I also checked the frontend and backend separately to make sure both were running correctly on their respective local ports. This helped me understand the basic flow of the application, from entering the details in the Angular form to sending them to the Flask API.
 
 ## Technologies Used
-Angular 14
-TypeScript
-Reactive Forms
-Angular Router
-Python
-Flask
-Node.js 16
-NVM
+- Angular 14
+- TypeScript
+- Reactive Forms
+- Angular Router
+- Python
+- Flask
+- Node.js 16
+- NVM
 ## What I understood today
 How to set up an Angular 14 project with the required Node version.
 How NVM can be used to switch between Node.js versions.
