@@ -1,131 +1,40 @@
-# Angular 14 + Flask Register App
+# Day 1 Angular & Flask Setup
 
-A ready-to-run registration project built for the requested stack:
+Today I started working on the Angular and Flask setup for the registration project. My main focus was to get both the frontend and backend running properly on my system and understand how they will communicate with each other.
 
-- Angular 14
-- Standalone Angular components
-- Angular Router
-- Reactive Forms
-- Bootstrap 5
-- Node.js 16.x
-- NVM Windows
-- Python Flask
-- `POST /register`
-- JSON parsing and server-side validation
-- Password/confirm-password validation on the frontend
-- CORS enabled for local Angular development
+I started with the Angular setup and used Node.js 16 for the project. Since I had to use a specific Node version, I used NVM to switch to Node 16. After setting up Angular 14, I created the basic registration page and started working with Reactive Forms.
 
-## Project structure
+The registration form includes:
 
-```text
-angular14-flask-register/
-├── frontend/
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── core/
-│   │   │   │   └── services/
-│   │   │   │       └── auth.service.ts
-│   │   │   ├── pages/
-│   │   │   │   └── register/
-│   │   │   │       ├── register.component.ts
-│   │   │   │       ├── register.component.html
-│   │   │   │       └── register.component.css
-│   │   │   ├── app.component.ts
-│   │   │   ├── app.component.html
-│   │   │   ├── app.component.css
-│   │   │   └── app.routes.ts
-│   │   ├── assets/
-│   │   ├── index.html
-│   │   ├── main.ts
-│   │   └── styles.css
-│   ├── angular.json
-│   ├── package.json
-│   ├── tsconfig.json
-│   ├── tsconfig.app.json
-│   └── .gitignore
-├── backend/
-│   ├── app/
-│   │   ├── __init__.py
-│   │   ├── routes.py
-│   │   └── validators.py
-│   ├── run.py
-│   ├── requirements.txt
-│   └── .gitignore
-└── README.md
-```
+Full Name
+Email
+Mobile Number
+Password
+Confirm Password
 
-## 1. Node / NVM
+I also worked on the basic form validations. I added checks for empty fields, email format, mobile number, and password and confirm password matching. While doing this, I also got a better understanding of how form controls and validation work in Angular.
 
-Open PowerShell and use Node 16:
+For the backend, I started with Python Flask and created a virtual environment for the project. I set up the basic Flask application structure and created the registration API using POST /register.
 
-```powershell
-nvm list
-nvm use 16.20.2
-node -v
-npm -v
-```
+The API receives the registration details in JSON format and performs basic validation on the data before sending a JSON response back to the frontend.
 
-If Node 16 is not installed:
+I also checked the frontend and backend separately to make sure both were running correctly on their respective local ports. This helped me understand the basic flow of the application, from entering the details in the Angular form to sending them to the Flask API.
 
-```powershell
-nvm install 16.20.2
-nvm use 16.20.2
-```
-
-> Angular 14 is the Angular version used by this project. NVM is a Node version manager; the project does not use an "NVM 14" Node version.
-
-## 2. Start the Flask backend
-
-Open PowerShell in the `backend` folder:
-
-```powershell
-cd backend
-py -3 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-python run.py
-```
-
-Backend runs on:
-
-`http://localhost:5000`
-
-## 3. Start Angular
-
-Open a second PowerShell window:
-
-```powershell
-cd frontend
-npm install
-npx ng serve
-```
-
-Open:
-
-`http://localhost:4200`
-
-## Registration API
-
-`POST http://localhost:5000/register`
-
-Example JSON:
-
-```json
-{
-  "name": "Kabir Kiran",
-  "email": "kabir@example.com",
-  "mobile": "9876543210",
-  "password": "Password@123"
-}
-```
-
-The API validates:
-
-- name required
-- email required and valid
-- mobile required and valid
-- password required and minimum 8 characters
-- JSON request body
-
-For this learning project, registration is intentionally kept as an API validation exercise. It does not persist users to a database and it does not return or store the submitted password.
+## Technologies Used
+Angular 14
+TypeScript
+Reactive Forms
+Angular Router
+Python
+Flask
+Node.js 16
+NVM
+## What I understood today
+How to set up an Angular 14 project with the required Node version.
+How NVM can be used to switch between Node.js versions.
+Basic usage of Reactive Forms in Angular.
+How frontend form validation works.
+How to create a basic Flask application.
+How to create a POST API in Flask.
+How JSON data is received and validated in the backend.
+Basic communication flow between an Angular frontend and Flask backend.
